@@ -13,12 +13,14 @@ export class AppComponent implements OnInit {
   public tasks!: Task[];
   public editTask!: Task;
   public deleteTask!: Task;
+  title: String = "TEST";
 
   constructor(private taskService: TaskService){}
 
   ngOnInit(){
     this.getTasks();
   }
+  
   public getTasks(): void {
     this.taskService.getTasks().subscribe(
       (response: Task[]) => {
